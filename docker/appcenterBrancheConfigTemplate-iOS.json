@@ -1,0 +1,40 @@
+{
+	"trigger": "manual",
+	"environmentVariables": [
+		{
+			"name": "IS_DEV_APP",
+			"value": "True"
+		},
+		{
+			"name": "SUPPORTS_MOBILE_TOOLKIT",
+			"value": "True"
+		}
+	],
+	"signed": true,
+	"testsEnabled": false,
+	"badgeIsEnabled": false,
+	"toolsets": {
+		"buildscripts": {
+			"package.json": {
+				"postClone": "appcenter-post-clone.sh",
+				"preBuild": "appcenter-pre-build.sh"
+			}
+		},
+		"javascript": {
+			"nodeVersion": "12.x",
+			"packageJsonPath": "package.json",
+			"runTests": false
+		},
+		"xcode": {
+			"certificateEncoded": "${certificateEncoded}",
+			"certificatePassword": "${certificatePassword}",
+			"certificateFilename": "Certificate.p12",
+			"provisioningProfileEncoded": "${provisioningProfileEncoded}",
+			"provisioningProfileFilename": "App.mobileprovision",
+			"projectOrWorkspacePath": "ios/NativeTemplate.xcworkspace",
+			"scheme": "nativeTemplate",
+			"xcodeVersion": "12.4",
+			"podfilePath": "ios/Podfile"
+		}
+	}
+}

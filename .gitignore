@@ -74,3 +74,4 @@ android/\.settings/org\.eclipse\.buildship\.core\.prefs
 android/mendixnative-release/\.project
 
 android/mendixnative-release/\.settings/org\.eclipse\.buildship\.core\.prefs
+profile.sh
